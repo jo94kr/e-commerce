@@ -3,15 +3,33 @@
 
 # E-Commerce 프로젝트
 1. [프로젝트 개요](#프로젝트-개요)
-2. [주요 기능](#주요-기능)
-3. [기술 스택](#기술-스택)
-
+2. [기술 스택](#기술-스택)
+3. [주요 기능](#주요-기능)
+4. [API Spec](docs%2Fapi-spec.md)
 ---
 
 ## 프로젝트 개요
 
 이 프로젝트는 **이커머스 서비스**에 필요한 핵심 기능을 구현합니다.  
 상품 검색, 포인트 충전/결제, 선착순 쿠폰 발급, 장바구니, 주문/결제 등 전형적인 온라인 쇼핑몰에서 요구되는 기능들을 포함하고 있습니다.
+
+---
+
+## 기술 스택
+
+- Backend
+    - Java 21
+    - Spring Boot 3.4.2
+    - JPA
+- Database
+    - MySQL
+    - ElasticSearch
+    - Redis
+- Infra
+    - Docker
+- ETC
+    - Kafka
+    - CI/CD (GitHub Action)
 
 ---
 
@@ -56,21 +74,4 @@
 - 사용자 식별자를 통해 **결제에 사용할 금액(포인트)을 충전**할 수 있음
 - 충전된 포인트의 **잔액을 실시간으로 조회** 가능
 
----
-
-## 기술 스택
-
-- Backend
-    - Java 21
-    - Spring Boot 3.4.2
-    - JPA
-- Database
-    - MySQL
-    - ElasticSearch
-    - Redis
-- Infra
-    - Docker
-- ETC
-    - Kafka
-    - CI/CD (GitHub Action)
 ---
