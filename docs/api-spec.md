@@ -1,25 +1,25 @@
 # API Spec
 
----
+---  
 
 - [검색 API](#%EA%B2%80%EC%83%89-api)
-  - [상품 검색](#%EC%83%81%ED%92%88-%EA%B2%80%EC%83%89)
+    - [상품 검색](#%EC%83%81%ED%92%88-%EA%B2%80%EC%83%89)
 - [상품 API](#%EC%83%81%ED%92%88-api)
-  - [상품 상세 조회](#%EC%83%81%ED%92%88-%EB%8B%A8%EA%B1%B4-%EC%A1%B0%ED%9A%8C)
-  - [인기 상품 조회](#%EC%9D%B8%EA%B8%B0-%EC%83%81%ED%92%88-%EC%A1%B0%ED%9A%8C)
+    - [상품 상세 조회](#%EC%83%81%ED%92%88-%EB%8B%A8%EA%B1%B4-%EC%A1%B0%ED%9A%8C)
+    - [인기 상품 조회](#%EC%9D%B8%EA%B8%B0-%EC%83%81%ED%92%88-%EC%A1%B0%ED%9A%8C)
 - [주문 / 결제 API](#%EC%A3%BC%EB%AC%B8--%EA%B2%B0%EC%A0%9C-api)
-  - [주문 생성](#%EC%A3%BC%EB%AC%B8-%EC%83%9D%EC%84%B1)
-  - [결제 요청](#%EA%B2%B0%EC%A0%9C-%EC%9A%94%EC%B2%AD)
-  - [주문 취소](#%EC%A3%BC%EB%AC%B8-%EC%B7%A8%EC%86%8C)
+    - [주문 생성](#%EC%A3%BC%EB%AC%B8-%EC%83%9D%EC%84%B1)
+    - [결제 요청](#%EA%B2%B0%EC%A0%9C-%EC%9A%94%EC%B2%AD)
+    - [주문 취소](#%EC%A3%BC%EB%AC%B8-%EC%B7%A8%EC%86%8C)
 - [사용자 API](#%EC%82%AC%EC%9A%A9%EC%9E%90-api)
-  - [잔액 충전](#%EC%9E%94%EC%95%A1-%EC%B6%A9%EC%A0%84)
-  - [잔액 조회](#%EC%9E%94%EC%95%A1-%EC%A1%B0%ED%9A%8C)
-  - [쿠폰 발급](#%EC%BF%A0%ED%8F%B0-%EB%B0%9C%EA%B8%89)
-  - [보유 쿠폰 목록 조회](#%EB%B3%B4%EC%9C%A0-%EC%BF%A0%ED%8F%B0-%EB%AA%A9%EB%A1%9D-%EC%A1%B0%ED%9A%8C)
-  - [장바구니에 상품 추가](#%EC%9E%A5%EB%B0%94%EA%B5%AC%EB%8B%88%EC%97%90-%EC%83%81%ED%92%88-%EC%B6%94%EA%B0%80)
-  - [장바구니 조회](#%EC%9E%A5%EB%B0%94%EA%B5%AC%EB%8B%88-%EC%A1%B0%ED%9A%8C)
-  - [장바구니 상품 삭제](#%EC%9E%A5%EB%B0%94%EA%B5%AC%EB%8B%88-%EC%83%81%ED%92%88-%EC%82%AD%EC%A0%9C)
-  - [비회원 장바구니 병합](#%EB%B9%84%ED%9A%8C%EC%9B%90-%EC%9E%A5%EB%B0%94%EA%B5%AC%EB%8B%88-%EB%B3%91%ED%95%A9)
+    - [잔액 충전](#%EC%9E%94%EC%95%A1-%EC%B6%A9%EC%A0%84)
+    - [잔액 조회](#%EC%9E%94%EC%95%A1-%EC%A1%B0%ED%9A%8C)
+    - [쿠폰 발급](#%EC%BF%A0%ED%8F%B0-%EB%B0%9C%EA%B8%89)
+    - [보유 쿠폰 목록 조회](#%EB%B3%B4%EC%9C%A0-%EC%BF%A0%ED%8F%B0-%EB%AA%A9%EB%A1%9D-%EC%A1%B0%ED%9A%8C)
+    - [장바구니에 상품 추가](#%EC%9E%A5%EB%B0%94%EA%B5%AC%EB%8B%88%EC%97%90-%EC%83%81%ED%92%88-%EC%B6%94%EA%B0%80)
+    - [장바구니 조회](#%EC%9E%A5%EB%B0%94%EA%B5%AC%EB%8B%88-%EC%A1%B0%ED%9A%8C)
+    - [장바구니 상품 삭제](#%EC%9E%A5%EB%B0%94%EA%B5%AC%EB%8B%88-%EC%83%81%ED%92%88-%EC%82%AD%EC%A0%9C)
+    - [비회원 장바구니 병합](#%EB%B9%84%ED%9A%8C%EC%9B%90-%EC%9E%A5%EB%B0%94%EA%B5%AC%EB%8B%88-%EB%B3%91%ED%95%A9)
 
 ---  
 
@@ -27,10 +27,10 @@
 
 ### 상품 검색
 
-- **Endpoint**: `GET /search/products`
+- **Endpoint**: `GET /products/search`
 - **Description**:
-  - 상품명, 카테고리, 가격 범위, 인기순 등의 조건으로 상품을 검색한다.
-  - 오타 보정, 자동완성, 추천검색어, 초성검색 등의 기능 구현
+    - 상품명, 카테고리, 가격 범위, 인기순 등의 조건으로 상품을 검색한다.
+    - 오타 보정, 자동완성, 추천검색어, 초성검색 등의 기능 구현
 
 #### Query Parameters
 
@@ -52,7 +52,6 @@
     "price": 45000,
     "category": "컴퓨터/주변기기"
   },
-  
   {
     "productId": 202,
     "name": "무선 키보드",
@@ -249,7 +248,7 @@
 
 ### 주문 취소
 
-- **Endpoint**: `POST /orders/{orderId}/cancel`
+- **Endpoint**: `PATCH /orders/{orderId}/cancel`
 - **Description**: 진행 중인 결제를 취소하고 싶을 경우(혹은 환불 등의 시나리오), 주문도 함께 취소하는 API
 
 #### Header
@@ -332,7 +331,7 @@
 
 ### 쿠폰 발급
 
-- **Endpoint**: `POST /users/coupons/{couponId}`
+- **Endpoint**: `POST /coupons/{couponId}/issue`
 - **Description**: 사용자가 선착순으로 할인 쿠폰을 발급받는다. (금액 할인/정률 할인 구분은 `couponType` 등으로 처리)
 
 #### Header
@@ -533,7 +532,7 @@
 
 #### Header
 
-| 필드명          | 타입     | 설명             |  
-|--------------|--------|----------------|  
-| X-USER-ID    | number | 사용자 식별자(필수)    |  
-| X-SESSION-ID | string | 비회원 세션 아이디(필수) |
+| 필드명          | 타입     | 설명             |     |
+|--------------|--------|----------------|-----|
+| X-USER-ID    | number | 사용자 식별자(필수)    |     |
+| X-SESSION-ID | string | 비회원 세션 아이디(필수) |     |
