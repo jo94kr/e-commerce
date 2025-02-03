@@ -1,8 +1,11 @@
 # E-Commerce 프로젝트
+
 1. [프로젝트 개요](#프로젝트-개요)
 2. [기술 스택](#기술-스택)
 3. [주요 기능](#주요-기능)
 4. [API Spec](docs%2Fapi-spec.md)
+5. [Sequence Diagram](docs/sequence-diagram.md)
+
 ---
 
 ## 프로젝트 개요
